@@ -104,7 +104,7 @@ btnHold.addEventListener("click", function () {
         score[activePlayer] += currentScore
         document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer]
 
-        if (score[activePlayer] >= 100) {
+        if (score[activePlayer] >= 5) {
             winModal.classList.remove("hidden")
             playingStatus = false
             document.querySelector(`.player--${activePlayer}`).classList.add("player--winner")
@@ -113,7 +113,7 @@ btnHold.addEventListener("click", function () {
 
             diceEl.classList.add("hidden")
             winner.classList.remove("hidden")
-            winner.textContent = `Player ${activePlayer + 1} won 😎`;
+            winner.textContent = `Player ${activePlayer + 1} won 😎 - Score is ${score[activePlayer]}`;
 
         }
         else {
