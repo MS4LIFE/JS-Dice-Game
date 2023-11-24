@@ -10,7 +10,10 @@ const player0El = document.querySelector(".player--0");
 const player1El = document.querySelector(".player--1");
 const modal = document.querySelector(".modal")
 const overlay = document.querySelector(".overlay")
+const winModal = document.querySelector(".win-modal")
+const winOverlay = document.querySelector(".win-overlay")
 const btnCloseModal = document.querySelector(".close-modal")
+const winner = document.querySelector(".winner")
 
 let btnNew = document.querySelector(".btn--new")
 let btnRoll = document.querySelector(".btn--roll")
@@ -36,7 +39,6 @@ btnCloseModal.addEventListener("click", closeModal)
 overlay.addEventListener("click", closeModal)
 
 
-
 const init = function () {
     score = [0, 0]
     currentScore = 0;
@@ -52,6 +54,8 @@ const init = function () {
     player1El.classList.remove("player--winner")
     player0El.classList.add("player--active")
     player1El.classList.remove("player--active")
+    winOverlay.classList.add("hidden")
+    winModal.classList.add("hidden")
 }
 init()
 
@@ -100,13 +104,16 @@ btnHold.addEventListener("click", function () {
         score[activePlayer] += currentScore
         document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer]
 
-        if (score[activePlayer] >= 5) {
+        if (score[activePlayer] >= 100) {
+            winModal.classList.remove("hidden")
             playingStatus = false
             document.querySelector(`.player--${activePlayer}`).classList.add("player--winner")
             document.querySelector(`.player--${activePlayer}`).classList.remove("player--active")
 
 
             diceEl.classList.add("hidden")
+            winner.classList.remove("hidden")
+            winner.textContent = `Player ${activePlayer + 1} won 😎 - Score is ${currentScore}`;
 
         }
         else {

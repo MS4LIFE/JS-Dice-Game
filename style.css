@@ -131,7 +131,7 @@ main {
 }
 
 .btn--new {
-  top: 4rem;
+  top: 10rem;
 }
 
 .btn--roll {
@@ -174,7 +174,8 @@ main {
 }
 
 
-.modal {
+.modal,
+.win-modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -206,14 +207,26 @@ main {
 }
 
 
-.overlay {
+.overlay,
+.win-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(174, 174, 174, 0.6);
+  background-color: rgba(246, 229, 229, 0.6);
 
   backdrop-filter: blur(3px);
   z-index: 5;
+}
+
+.winner {
+  color: rgb(255, 255, 255);
+  background-color: rgb(46, 46, 46);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+  padding: 2rem;
 }
