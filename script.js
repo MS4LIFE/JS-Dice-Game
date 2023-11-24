@@ -11,7 +11,7 @@ const player1El = document.querySelector(".player--1");
 const modal = document.querySelector(".modal")
 const overlay = document.querySelector(".overlay")
 const winModal = document.querySelector(".win-modal")
-const winOverlay = document.querySelector(".win-overlay")
+// const winOverlay = document.querySelector(".win-overlay")
 const btnCloseModal = document.querySelector(".close-modal")
 const winner = document.querySelector(".winner")
 
@@ -63,7 +63,7 @@ const initGame = function () {
     player1El.classList.remove("player--winner")
     player0El.classList.add("player--active")
     player1El.classList.remove("player--active")
-    winOverlay.classList.add("hidden")
+    // winOverlay.classList.add("hidden")
     winModal.classList.add("hidden")
 }
 initGame()
@@ -116,7 +116,7 @@ btnHold.addEventListener("click", function () {
         document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer]
 
         // Winning Conditions
-        if (score[activePlayer] >= 100) {
+        if (score[activePlayer] >= 10) {
             winModal.classList.remove("hidden")
             playingStatus = false
             document.querySelector(`.player--${activePlayer}`).classList.add("player--winner")
@@ -124,7 +124,7 @@ btnHold.addEventListener("click", function () {
 
 
             diceEl.classList.add("hidden")
-            winner.classList.remove("hidden")
+            // winner.classList.remove("hidden")
             winner.textContent = `Player ${activePlayer + 1} won 😎 - Score is ${score[activePlayer]}`;
         }
         else {
@@ -137,3 +137,4 @@ btnHold.addEventListener("click", function () {
 })
 // Initialize and Reset After Winning
 btnNew.addEventListener("click", initGame)
+
