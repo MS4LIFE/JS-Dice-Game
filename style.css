@@ -161,7 +161,7 @@ main {
 }
 
 .player--winner {
-  background-color: #000000;
+  background-color: white;
 }
 
 .player--winner .name {
