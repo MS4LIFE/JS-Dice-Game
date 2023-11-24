@@ -38,7 +38,7 @@ btnCloseModal.addEventListener("click", closeModal)
 
 overlay.addEventListener("click", closeModal)
 
-
+// game initialization
 const initGame = function () {
     score = [0, 0]
     currentScore = 0;
@@ -59,6 +59,7 @@ const initGame = function () {
 }
 initGame()
 
+// Switching Player
 function switchPlayer() {
     document.getElementById(`current--${activePlayer}`).textContent = 0
     activePlayer = activePlayer === 0 ? 1 : 0
@@ -95,6 +96,7 @@ btnRoll.addEventListener("click", function () {
 })
 
 
+// Saving Score When Press Hold And Switch Player
 btnHold.addEventListener("click", function () {
 
     // add score to score array depending on index
@@ -104,6 +106,7 @@ btnHold.addEventListener("click", function () {
         score[activePlayer] += currentScore
         document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer]
 
+        // Winning Conditions
         if (score[activePlayer] >= 100) {
             winModal.classList.remove("hidden")
             playingStatus = false
@@ -114,7 +117,6 @@ btnHold.addEventListener("click", function () {
             diceEl.classList.add("hidden")
             winner.classList.remove("hidden")
             winner.textContent = `Player ${activePlayer + 1} won 😎 - Score is ${score[activePlayer]}`;
-
         }
         else {
             // Switching Player
@@ -124,5 +126,5 @@ btnHold.addEventListener("click", function () {
         }
     }
 })
-
+// Initialize and Reset After Winning
 btnNew.addEventListener("click", initGame)
