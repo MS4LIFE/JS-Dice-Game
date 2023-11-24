@@ -39,7 +39,7 @@ btnCloseModal.addEventListener("click", closeModal)
 overlay.addEventListener("click", closeModal)
 
 
-const init = function () {
+const initGame = function () {
     score = [0, 0]
     currentScore = 0;
     activePlayer = 0;
@@ -57,7 +57,7 @@ const init = function () {
     winOverlay.classList.add("hidden")
     winModal.classList.add("hidden")
 }
-init()
+initGame()
 
 function switchPlayer() {
     document.getElementById(`current--${activePlayer}`).textContent = 0
@@ -104,7 +104,7 @@ btnHold.addEventListener("click", function () {
         score[activePlayer] += currentScore
         document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer]
 
-        if (score[activePlayer] >= 5) {
+        if (score[activePlayer] >= 100) {
             winModal.classList.remove("hidden")
             playingStatus = false
             document.querySelector(`.player--${activePlayer}`).classList.add("player--winner")
@@ -125,4 +125,4 @@ btnHold.addEventListener("click", function () {
     }
 })
 
-btnNew.addEventListener("click", init)
+btnNew.addEventListener("click", initGame)
