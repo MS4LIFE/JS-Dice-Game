@@ -16,6 +16,7 @@ const btnCloseModal = document.querySelector(".close-modal")
 const winner = document.querySelector(".winner")
 
 let btnNew = document.querySelector(".btn--new")
+let btnStart = document.querySelector(".btn--start")
 let btnRoll = document.querySelector(".btn--roll")
 let btnHold = document.querySelector(".btn--hold")
 
@@ -30,6 +31,12 @@ document.addEventListener("keydown", function (event) {
     event.keyCode === 27 ? closeModal() : null
 })
 
+// Start Game Function
+btnStart.addEventListener("click", function () {
+    modal.classList.add("hidden")
+    overlay.classList.add("hidden")
+})
+
 const closeModal = function () {
     modal.classList.add("hidden")
     overlay.classList.add("hidden")
@@ -37,6 +44,8 @@ const closeModal = function () {
 btnCloseModal.addEventListener("click", closeModal)
 
 overlay.addEventListener("click", closeModal)
+
+
 
 // game initialization
 const initGame = function () {
