@@ -113,7 +113,7 @@ btnHold.addEventListener("click", function () {
 
             diceEl.classList.add("hidden")
             winner.classList.remove("hidden")
-            winner.textContent = `Player ${activePlayer + 1} won 😎 - Score is ${currentScore}`;
+            winner.textContent = `Player ${activePlayer + 1} won 😎`;
 
         }
         else {
