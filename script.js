@@ -31,7 +31,7 @@ document.addEventListener("keydown", function (event) {
     event.keyCode === 27 ? closeModal() : null
 })
 
-// Start Game Function
+// Start Game Button
 btnStart.addEventListener("click", function () {
     modal.classList.add("hidden")
     overlay.classList.add("hidden")
